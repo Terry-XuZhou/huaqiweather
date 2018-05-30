@@ -1,0 +1,11 @@
+<litepal>
+    <dbname value="hauqi_weather" />
+    <version value="2" />
+
+    <list>
+        <mapping class="com.example.terry.huaqiweather.db.Province"/>
+        <mapping class="com.example.terry.huaqiweather.db.City"/>
+        <mapping class="com.example.terry.huaqiweather.db.County"/>
+    </list>
+</litepal>
+

@@ -1,9 +1,0 @@
-<litepal>
-    <dbname value="huaqi_weather" />
-    <verson value="1" />
-    <list>
-        <mapping class="com.example.terry.huaqiweather.db.Province" />
-        <mapping class="com.example.terry.huaqiweather.db.City" />
-        <mapping class="com.example.terry.huaqiweather.db.County" />
-    </list>
-</litepal>
