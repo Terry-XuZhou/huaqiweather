@@ -1,10 +1,13 @@
 package com.example.terry.huaqiweather.util;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.example.terry.huaqiweather.db.City;
 import com.example.terry.huaqiweather.db.County;
 import com.example.terry.huaqiweather.db.Province;
+import com.example.terry.huaqiweather.gson.Weather;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -82,6 +85,24 @@ public class Utility {
             }
         }
         return false;
+    }
+
+    /*
+    将JSON数据解析成Weather类
+     */
+    public static Weather handleWeatherRespons(String response){
+        try{
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
+            String weatherContent = jsonArray.getJSONObject(0).toString();
+             Weather w = new Gson().fromJson(weatherContent,Weather.class);
+             Log.d("11111111",w.aqi.city.aqi);
+            Log.d("222222222",w.aqi.city.pm25);
+            return w;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }
